@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root { color-scheme: dark; }
+  html, body, #root { height: 100%; }
+  body { @apply bg-ink-950 text-bone-100 font-sans antialiased; -webkit-tap-highlight-color: transparent; }
+  ::selection { background: #4a4434; color: #f6f1e3; }
+
+  * { scrollbar-width: thin; scrollbar-color: #2b2b29 transparent; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #2b2b29; border: 3px solid transparent; background-clip: content-box; }
+  ::-webkit-scrollbar-thumb:hover { background: #3a3a37; border: 3px solid transparent; background-clip: content-box; }
+
+  button, input, textarea { -webkit-appearance: none; appearance: none; background: none; border: 0; border-radius: 0; font: inherit; color: inherit; outline: none; }
+  button { cursor: pointer; text-align: inherit; }
+  textarea { resize: none; caret-color: #c8b88f; }
+  input { caret-color: #c8b88f; }
+  input[type='number'] { -moz-appearance: textfield; }
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+  input[type='search']::-webkit-search-cancel-button,
+  input[type='search']::-webkit-search-decoration { -webkit-appearance: none; }
+  ::placeholder { color: #5c5a53; opacity: 1; }
+
+  :focus-visible { outline: 1px solid #c8b88f; outline-offset: 2px; border-radius: 6px; }
+  input:focus-visible, textarea:focus-visible { outline: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  }
+}
